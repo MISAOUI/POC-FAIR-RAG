@@ -84,7 +84,7 @@ def build_or_load_vectorstore(pdf_path: Path) -> FAISS:
     # Si l’index existe déjà, on le recharge
     if INDEX_DIR.exists():
         console.print(
-            f"[green]✅ Chargement de l’index FAISS existant depuis {INDEX_DIR}[/green]"
+            f"[green] Chargement de l’index FAISS existant depuis {INDEX_DIR}[/green]"
         )
         return FAISS.load_local(
             str(INDEX_DIR),
@@ -112,7 +112,7 @@ def build_or_load_vectorstore(pdf_path: Path) -> FAISS:
     vectorstore.save_local(str(INDEX_DIR))
 
     console.print(
-        f"[green]✅ Index créé : {len(chunks)} segments sauvegardés dans {INDEX_DIR}[/green]"
+        f"[green] Index créé : {len(chunks)} segments sauvegardés dans {INDEX_DIR}[/green]"
     )
 
     return vectorstore
